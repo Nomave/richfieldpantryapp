@@ -14,7 +14,7 @@ import java.util.List;
 public interface RecipeDataAccessObject {
     @Transaction
     @Query("SELECT * FROM recipes ORDER BY name ASC")
-    LiveData<List<RecipeWithIngredients>> getAllAAWithIngredients();
+    LiveData<List<RecipeWithIngredients>> getAllWithIngredients();
 
     @Transaction
     @Query("SELECT * FROM recipes ORDER BY name ASC")

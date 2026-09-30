@@ -45,4 +45,16 @@
     <string name="delete_confirm_title">Delete ingredient?</string>
     <string name="delete_confirm_message">Remove %1$s from your pantry?</string>
 
+    <string name="recipes_summary">Checked %1$d recipes against %2$d pantry items</string>
+    <string name="header_can_make">You can make now (%1$d)</string>
+    <string name="header_almost_there">Almost there: missing one ingredient (%1$d)</string>
+    <string name="recipes_empty">No recipes match your pantry yet. Add more ingredients.</string>
+    <plurals name="recipe_have_all">
+        <item quantity="one">You have everything it needs (1 ingredient)</item>
+        <item quantity="other">You have everything it needs (%d ingredients)</item>
+    </plurals>
+    <string name="approx_units_note">Some quantities compared using approximate unit conversion</string>
+    <string name="recipe_missing">Missing: %1$s</string>
+    <string name="recipe_not_enough">Not enough: %1$s</string>
+
 </resources>

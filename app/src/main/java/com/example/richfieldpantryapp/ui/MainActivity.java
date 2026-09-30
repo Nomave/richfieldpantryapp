@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             } else if (id == R.id.nav_settings) {
                 show(new SettingsFragment(), R.string.title_settings);
+                return true;
             }
             return false;
         });

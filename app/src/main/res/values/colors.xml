@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#2F6B4F</color>
+    <color name="primary_dark">#22523B</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#CDE7D6</color>
+    <color name="on_primary_container">#0F2E1F</color>
+    <color name="secondary">#B4562A</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#F8DCCB</color>
+    <color name="on_secondary_container">#3B1A08</color>
+
+    <!-- Status colours used for expiry and ingredient availability -->
+    <color name="status_ok">#2E7D32</color>
+    <color name="status_expiring">#C25E00</color>
+    <color name="status_expired">#B3261E</color>
+
+    <color name="banner_bg">#FFF1E4</color>
+    <color name="banner_text">#7A3B00</color>
+    <color name="card_stroke">#DDE3DE</color>
+
+    <color name="ic_launcher_background">#2F6B4F</color>
 </resources>

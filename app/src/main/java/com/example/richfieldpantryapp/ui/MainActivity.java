@@ -1,26 +1,69 @@
 package com.example.richfieldpantryapp.ui;
 
+
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.richfieldpantryapp.R;
+import com.example.richfieldpantryapp.ui.pantry.PantryFragment;
+import com.example.richfieldpantryapp.ui.recipes.SuggestedRecipesFragment;
+import com.example.richfieldpantryapp.ui.settings.SettingsFragment;
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MaterialToolbar toolbar;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        BottomNavigationView navigation = findViewById(R.id.bottom_nav);
+        navigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_pantry) {
+                show(new PantryFragment(), R.string.title_pantry);
+                return true;
+            } else if (id == R.id.nav_recipes) {
+                show(new SuggestedRecipesFragment(), R.string.title_recipes);
+                return true;
+            } else if (id == R.id.nav_settings) {
+                show(new SettingsFragment(), R.string.title_settings);
+            }
+            return false;
         });
+
+        if (savedInstanceState == null) {
+            navigation.setSelectedItemId(R.id.nav_pantry);
+        } else {
+            toolbar.setTitle(titleFor(navigation.getSelectedItemId()));
+        }
+    }
+
+    private void show(Fragment fragment, @StringRes int titleRes) {
+        toolbar.setTitle(titleRes);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+    }
+
+    @StringRes
+    private int titleFor(int navItemId) {
+        if (navItemId == R.id.nav_recipes) {
+            return R.string.title_recipes;
+        }
+        if (navItemId == R.id.bottom_nav) {
+            return R.string.title_settings;
+        }
+        return R.string.title_pantry;
     }
 }

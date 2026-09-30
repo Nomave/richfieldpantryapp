@@ -71,4 +71,15 @@
     <string name="icon_approximate">\u2248</string>
     <string name="icon_short">!</string>
     <string name="icon_missing">\u2717</string>
+    <string name="settings_section_pantry">Pantry</string>
+    <string name="settings_section_matching">Recipe matching</string>
+    <string name="settings_section_data">Data</string>
+    <string name="settings_highlight_expiring">Highlight items expiring soon</string>
+    <string name="settings_expiry_window">Expiring-soon window (days)</string>
+    <string name="settings_exclude_expired">Ignore expired items when matching recipes</string>
+    <string name="settings_show_almost_there">Show \"Almost there\" recipes (missing one ingredient)</string>
+    <string name="settings_matching_explainer">A recipe is only suggested when every ingredient is in your pantry in the quantity needed</string>
+    <string name="settings_clear_pantry">Clear entire pantry</string>
+    <string name="settings_clear_pantry_confirm">This removes every ingredient from your pantry. Your recipe collection is kept.</string>
+    <string name="settings_about">Richfield Smart Pantry Manager 1.0</string>
 </resources>

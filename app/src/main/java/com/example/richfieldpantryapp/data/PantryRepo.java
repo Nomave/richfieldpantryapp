@@ -49,6 +49,10 @@ public class PantryRepo {
 
     //Recipe
 
+    public void seedRecipesIfNeeded() {
+        diskExecutor.execute(() -> DatabaseSeeder.seedRecipesIfEmpty(db));
+    }
+
     public LiveData<List<RecipeWithIngredients>> getRecipes() {
         return db.recipeDataAccessObject().getAllWithIngredients();
     }
